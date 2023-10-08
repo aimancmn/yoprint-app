@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_logs', function (Blueprint $table) {
+        Schema::create('file_logs', function (Blueprint $table) {
             $table->id();
 
             $table->string('filename', 255)
@@ -32,6 +32,10 @@ return new class extends Migration
             ->nullable()
             ->comment('This column is to store the extracted data from the uploaded file which failed on data validation.');
 
+            $table->string('status')
+            ->default('pending')
+            ->comment('This column is to store the uploaded file statuses');
+
             $table->timestamps();
         });
     }
@@ -41,6 +45,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_logs');
+        Schema::dropIfExists('file_logs');
     }
 };

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductLog extends Model
+class FileLog extends Model
 {
     use HasFactory;
 
@@ -15,7 +15,7 @@ class ProductLog extends Model
      *
      * @var string
      */
-    protected $table = 'product_logs';
+    protected $table = 'file_logs';
 
     /**
      * The attributes that are mass assignable.
